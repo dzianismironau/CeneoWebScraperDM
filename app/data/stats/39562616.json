@@ -1,0 +1,25 @@
+{
+    "product_id": "39562616",
+    "opinions_count": 10,
+    "pros_count": 5,
+    "cons_count": 3,
+    "average_rating": 4.55,
+    "rating_distribution": {
+        "0.0": 0,
+        "0.5": 0,
+        "1.0": 0,
+        "1.5": 0,
+        "2.0": 0,
+        "2.5": 0,
+        "3.0": 0,
+        "3.5": 0,
+        "4.0": 3,
+        "4.5": 3,
+        "5.0": 4
+    },
+    "recommendations_distribution": {
+        "Polecam": 10.0,
+        "Nie polecam": NaN,
+        "Brak rekomendacji": NaN
+    }
+}
