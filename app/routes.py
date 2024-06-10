@@ -84,7 +84,18 @@ def author():
 
 @app.route('/product/<product_id>')
 def product(product_id):
-    return render_template("product.html", product_id=product_id)
+    product_file_path = os.path.join('app/products', f'{product_id}.json')
+    product_data = None
+    try:
+        with open(product_file_path, 'r', encoding='utf-8') as file:
+            product_data = json.load(file)
+    except FileNotFoundError:
+        f"Product with ID {product_id} not found"
+    except json.JSONDecodeError:
+        f"Error decoding JSON for product with ID {product_id}"
+    if product_data is None:
+        f"Unexpected error for product with ID {product_id}"
+    return render_template("product.html.jinja", product=product_data,product_id=product_id)
 
 @app.route('/product/download_json/<product_id>')
 def download_json(product_id):
@@ -94,6 +105,7 @@ def download_json(product_id):
 def download_csv(product_id):
     opinions = pd.read_json(f'app/data/opinions/{product_id}.json')
     buffer = io.BytesIO(opinions.to_csv(sep=';', decimal=',', index=False).encode())
+    opinions.to_csv()
     return send_file(buffer, "text/csv", as_attachment=True, download_name=f"{product_id}.csv")
 
 @app.route('/product/download_xlsx/<product_id>')

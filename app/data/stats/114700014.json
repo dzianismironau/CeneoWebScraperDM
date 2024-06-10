@@ -1,25 +1,25 @@
 {
     "product_id": "114700014",
-    "opinions_count": 10,
-    "pros_count": 7,
-    "cons_count": 0,
-    "average_rating": 4.4,
+    "opinions_count": 203,
+    "pros_count": 126,
+    "cons_count": 9,
+    "average_rating": 4.825123152709359,
     "rating_distribution": {
         "0.0": 0,
         "0.5": 0,
-        "1.0": 1,
+        "1.0": 2,
         "1.5": 0,
         "2.0": 0,
-        "2.5": 0,
-        "3.0": 0,
-        "3.5": 0,
-        "4.0": 2,
-        "4.5": 0,
-        "5.0": 7
+        "2.5": 1,
+        "3.0": 1,
+        "3.5": 2,
+        "4.0": 11,
+        "4.5": 18,
+        "5.0": 168
     },
     "recommendations_distribution": {
-        "Polecam": 9.0,
-        "Nie polecam": 1.0,
-        "Brak rekomendacji": NaN
+        "Polecam": 197,
+        "Nie polecam": 3,
+        "Brak rekomendacji": 3
     }
 }

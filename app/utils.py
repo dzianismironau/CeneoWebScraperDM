@@ -1,16 +1,11 @@
-selectors = {
-    "opinion_id": (None, "data-entry-id"),
-    "author": ("span.user-post__author-name",),
-    "recommendation": ("span.user-post__author-recomendation > em",),
-    "rating": ("span.user-post__score-count",),
-    "content": ("div.user-post__text",),
-    "pros": ("div.review-feature__title--positives ~ div.review-feature__item", None, True),
-    "cons": ("div.review-feature__title--negatives ~ div.review-feature__item", None, True),
-    "useful": ("span[id^='votes-yes']",),
-    "useless": ("span[id^='votes-no']",),
-    "post_date": ("span.user-post__published > time:nth-child(1)","datetime"),
-    "purchase_date": ("span.user-post__published > time:nth-child(2)","datetime")
-}
+import os
+import json
+import requests
+from bs4 import BeautifulSoup
+import matplotlib.pyplot as plt
+import io
+import base64
+
 
 def extract(ancestor, selector=None, attribute=None, returns_list=False):
     if selector:
@@ -30,3 +25,17 @@ def extract(ancestor, selector=None, attribute=None, returns_list=False):
     if attribute:
         return ancestor[attribute].strip()
     return ancestor.get_text().strip()
+
+selectors = {
+    "opinion_id": (None, "data-entry-id"),
+    "author": ("span.user-post__author-name",),
+    "recommendation": ("span.user-post__author-recomendation > em",),
+    "rating": ("span.user-post__score-count",),
+    "content": ("div.user-post__text",),
+    "pros": ("div.review-feature__title--positives ~ div.review-feature__item", None, True),
+    "cons": ("div.review-feature__title--negatives ~ div.review-feature__item", None, True),
+    "useful": ("span[id^='votes-yes']",),
+    "useless": ("span[id^='votes-no']",),
+    "post_date": ("span.user-post__published > time:nth-child(1)","datetime"),
+    "purchase_date": ("span.user-post__published > time:nth-child(2)","datetime")
+}
